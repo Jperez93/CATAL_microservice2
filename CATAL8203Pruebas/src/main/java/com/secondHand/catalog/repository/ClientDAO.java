@@ -10,6 +10,7 @@ public interface ClientDAO extends CrudRepository<Client, Long>{
 
 
 	public List<Client> findAll();
+	public Client findByUser(String user);
 
 	
 }

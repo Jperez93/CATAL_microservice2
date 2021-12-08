@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	style="font-size: 16px;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="Nombre del Producto">
+<meta name="description" content="">
+<meta name="page_type" content="np-template-header-footer-from-plugin">
+<title>details</title>
+<link rel="stylesheet" th:href="@{/css/details.css}">
+<link rel="stylesheet" th:href="@{/css/nicepage.css}">
+<!-- <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="nicepage.js"
+	defer=""></script> -->
+<meta name="generator" content="Nicepage 4.0.3, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png"
+}</script>
+<meta name="theme-color" content="#478ac9">
+<meta property="og:title" content="details">
+<meta property="og:type" content="website">
+</head>
+<body class="u-body">
+	<div th:include="clients/template.html::header"></div>
+
+	<section class="u-align-center u-clearfix u-section-1" id="sec-4b34">
+		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+			<div
+				class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+				<div class="u-layout" style="">
+					<div class="u-layout-row" style="">
+						<img
+							class=" u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-30 u-size-xs-60u-container-layout u-valign-middle"
+							alt="" th:src="@{/images/{img} (img=${PRODUCT.image})}"
+							data-image-width="1000" data-image-height="1500">
+
+						<div
+							class="u-align-left u-container-style u-custom-color-1 u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2">
+							<div class="u-container-layout u-container-layout-2">
+								<h2 th:text="${PRODUCT.title}"
+									class="u-text u-text-default u-text-1"></h2>
+								<h4 th:text="${PRODUCT.client.name}+' '+${PRODUCT.client.surname}" class="u-text u-text-2"></h4>
+								<h4 th:text="${PRODUCT.section}" class="u-text u-text-3">
+									<br>
+								</h4>
+								<h4 th:text="${PRODUCT.state}" class="u-text u-text-4">
+									<br>
+								</h4>
+								<p th:text="${PRODUCT.description}" class="u-text u-text-5"></p>
+								<h3 th:text="${PRODUCT.prize}+€"
+									class="u-align-right u-text u-text-body-color u-text-6"></h3>
+								<a href=""
+									class="u-border-2 u-border-white u-btn u-btn-rectangle u-button-style u-none u-btn-1">Comprar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div th:include="clients/template.html::footer"></div>
+
+</body>
+</html>

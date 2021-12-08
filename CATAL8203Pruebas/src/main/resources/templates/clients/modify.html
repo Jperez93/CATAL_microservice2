@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	style="font-size: 16px;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="page_type" content="np-template-header-footer-from-plugin">
+<title>add</title>
+<link rel="stylesheet" th:href="@{/css/add.css}">
+<link rel="stylesheet" th:href="@{/css/nicepage.css}">
+<script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="nicepage.js"
+	defer=""></script>
+<meta name="generator" content="Nicepage 4.0.3, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+
+<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png"
+}</script>
+<meta name="theme-color" content="#478ac9">
+<meta property="og:title" content="Modify">
+<meta property="og:type" content="website">
+</head>
+<body class="u-body">
+	<div th:include="clients/template.html::header"></div>
+
+	<section class="u-clearfix u-grey-5 u-section-1" id="sec-3dbb">
+		<div class="u-clearfix u-sheet u-sheet-1">
+			<div
+				class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+				<div class="u-layout" style="">
+					<div class="u-layout-row" style="">
+						<div
+							class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1"
+							src="">
+							<div class="u-container-layout u-valign-top u-container-layout-1">
+								<div class="u-form u-form-1">
+									<form
+										th:action="@{/productos/edit/{id} (id=${PRODUCT.idproducts})}"
+										method="POST" enctype="multipart/form-data"
+										class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+										source="custom" name="form" style="padding: 10px;">
+										<input type="hidden" id="siteId" name="siteId"
+											value="786317956"> <input type="hidden" id="pageId"
+											name="pageId" value="549419519">
+										<div class="u-form-group u-form-name">
+											<label for="name-a1f7" class="u-form-control-hidden u-label"></label>
+											<input type="text" placeholder="Titulo del Producto"
+												th:value="${PRODUCT.title}" id="name-a1f7" name="title"
+												class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+										</div>
+										<div class="u-form-group u-form-textarea u-form-group-2">
+											<label for="textarea-bd8d"
+												class="u-form-control-hidden u-label"></label>
+											<textarea rows="4" cols="50" id="textarea-bd8d"
+												name="description" th:field="${PRODUCT.description}"
+												class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+												placeholder="Descripción"></textarea>
+										</div>
+										<div class="u-form-group u-form-select u-form-group-3">
+											<label for="select-411f"
+												class="u-form-control-hidden u-label"></label>
+											<div class="u-form-select-wrapper">
+												<select id="select-411f" name="section"
+													class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+													<option value="0">Categoría</option>
+													<option th:value="*{PRODUCT.section}"
+														th:text="*{PRODUCT.section}" selected></option>
+													<option value="Informatica">Informatica</option>
+													<option value="Herramientas">Herramientas</option>
+													<option value="Monitores">Monitores</option>
+												</select>
+												<svg xmlns="http://www.w3.org/2000/svg" width="14"
+													height="12" version="1" class="u-caret">
+													<path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+											</div>
+										</div>
+										<div class="u-form-group u-form-group-4">
+											<label for="text-51e6" class="u-form-control-hidden u-label"></label>
+											<input type="text" placeholder="Precio" id="text-51e6"
+												th:value="${PRODUCT.prize}" name="prize"
+												class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+										</div>
+										<div class="u-form-group u-form-select u-form-group-5">
+											<label for="select-e292"
+												class="u-form-control-hidden u-label"></label>
+											<div class="u-form-select-wrapper">
+												<select id="select-e292" name="state"
+													class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+													<option value="Disponible">Disponible</option>
+													<option th:value="*{PRODUCT.state}"
+														th:text="*{PRODUCT.state}" selected></option>
+													<option value="Reservado">Reservado</option>
+													<option value="Comprado">Comprado</option>
+												</select>
+												<svg xmlns="http://www.w3.org/2000/svg" width="14"
+													height="12" version="1" class="u-caret">
+													<path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+											</div>
+										</div>
+										<div class="u-text u-text-default u-text-1">
+											<input type="file" id="img" name="img">Add Photo
+										</div>
+										<div class="u-align-left u-form-group u-form-submit">
+											<input type="submit" value="MODIFICAR"
+												class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">
+										</div>
+										<div class="u-form-send-message u-form-send-success">
+											Gracias! Tu mensaje ha sido enviado.</div>
+										<div class="u-form-send-error u-form-send-message">No se
+											puede enviar su mensaje. Por favor, corrija los errores y
+											vuelva a intentarlo.</div>
+										<input type="hidden" value="" name="recaptchaResponse">
+									</form>
+								</div>
+							</div>
+						</div>
+						<div
+							class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-layout-cell-2"
+							src="">
+							<div class="u-container-layout u-container-layout-2" src="">
+								<img class="u-expanded-width u-image u-image-1"
+									th:src="@{/images/{img} (img=${PRODUCT.image})}" data-image-width="1080"
+									data-image-height="1080"> <a
+									th:href="@{/productos/delete/{id} (id=${PRODUCT.idproducts})}"
+									class="u-border-none u-btn u-button-style u-custom-color-4 u-hover-custom-color-6 u-btn-2">eliminar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div th:include="clients/template.html::footer"></div>
+
+</body>
+</html>

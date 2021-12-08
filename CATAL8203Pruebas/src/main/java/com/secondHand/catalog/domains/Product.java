@@ -19,10 +19,13 @@ public class Product implements Serializable {
 
 	private String description;
 
-	@Lob
-	private byte[] image;
+	private String image;
 
 	private int prize;
+
+	private String section;
+
+	private String state;
 
 	private String title;
 
@@ -30,16 +33,6 @@ public class Product implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="owner")
 	private Client client;
-
-	//bi-directional many-to-one association to ProductsState
-	@ManyToOne
-	@JoinColumn(name="state")
-	private ProductsState productsState;
-
-	//bi-directional many-to-one association to Section
-	@ManyToOne
-	@JoinColumn(name="section")
-	private Section sectionBean;
 
 	public Product() {
 	}
@@ -60,11 +53,11 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public byte[] getImage() {
+	public String getImage() {
 		return this.image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
@@ -74,6 +67,22 @@ public class Product implements Serializable {
 
 	public void setPrize(int prize) {
 		this.prize = prize;
+	}
+
+	public String getSection() {
+		return this.section;
+	}
+
+	public void setSection(String section) {
+		this.section = section;
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getTitle() {
@@ -90,22 +99,6 @@ public class Product implements Serializable {
 
 	public void setClient(Client client) {
 		this.client = client;
-	}
-
-	public ProductsState getProductsState() {
-		return this.productsState;
-	}
-
-	public void setProductsState(ProductsState productsState) {
-		this.productsState = productsState;
-	}
-
-	public Section getSectionBean() {
-		return this.sectionBean;
-	}
-
-	public void setSectionBean(Section sectionBean) {
-		this.sectionBean = sectionBean;
 	}
 
 }
